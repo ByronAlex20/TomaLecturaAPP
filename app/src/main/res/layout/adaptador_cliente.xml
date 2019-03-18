@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvNumMedidorCliente"
+        android:layout_width="match_parent"
+        android:textSize="12dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:textAlignment="center">
+        <TextView
+            android:id="@+id/tvLecturaAnterior"
+            android:layout_width="wrap_content"
+
+            android:textSize="12dp"
+            android:textAlignment="center"
+            android:layout_height="match_parent"
+            android:text="TextView" />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tvLecturaActual"
+            android:layout_width="wrap_content"
+            android:textSize="12dp"
+            android:textAlignment="center"
+            android:layout_height="match_parent"
+            android:text="TextView" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvConsumo"
+        android:layout_width="match_parent"
+        android:textSize="12dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvBarrio"
+        android:layout_width="match_parent"
+        android:textSize="12dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="TextView" />
+</LinearLayout>

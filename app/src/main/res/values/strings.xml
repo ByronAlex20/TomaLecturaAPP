@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">JAAPZ Móvil</string>
+    <string name="btn_login">Login</string>
+    <string name="hint_password">Ingrese Contraseña</string>
+    <string name="hint_usuario">Digite usuario</string>
+    <string name="hint_clave">Digite clave</string>
+    <string name="hint_label_base_sqlite">Base de Datos SQLite</string>
+    <string name="hint_base_sqlite">Digite nombre Base SQLite</string>
+    <string name="text_configuraciones">Configuraciones</string>
+    <string name="text_ip">IP Servidor</string>
+    <string name="hint_ip">Digite IP Servidor</string>
+    <string name="text_puerto">Puerto del Servidor de BD</string>
+    <string name="hint_puerto">Digite puerto del servidor de BD</string>
+    <string name="text_nombre_bd">Nombre de la BD</string>
+    <string name="hint_nombre_bd">Digite nombre de la BD</string>
+    <string name="text_usuario_bd">Nombre usuario del servidor de BD</string>
+    <string name="hint_usuario_bd">Digite usuario de la BD</string>
+    <string name="text_clave_bd">Clave del servidor de BD</string>
+    <string name="hint_clave_bd">Digite clave de la BD</string>
+    <string name="btn_grabar">Grabar</string>
+    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="action_close_sesion">Cerrar Sesión</string>
+    <!-- para la pantalla de sincronizacion -->
+    <string name="sync_title">Sincronizar</string>
+    <string name="sync_btn">Sincronizar resultados</string>
+    <string name="sync_resultados">Resultados</string>
+    <string name="sync_clientes_tomar">No. Clientes Cargados</string>
+
+
+    <!-- para la pantalla de cargar datos -->
+    <string name="carg_titulo">Cargar Datos a la aplicación</string>
+    <string name="carg_mensaje">Al cargar los datos a la aplicación, se cargarán para todos los usuarios responsables de lecturas con sus respectivas zonas asignaciones</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
