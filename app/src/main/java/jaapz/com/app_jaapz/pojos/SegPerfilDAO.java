@@ -15,6 +15,29 @@ import jaapz.com.app_jaapz.util.ConexionSQLite;
 import jaapz.com.app_jaapz.util.Constantes;
 
 public class SegPerfilDAO {
+    public List<SegPerfil> getAllPerfilesById(Integer id,Context context){
+        try{
+            List<SegPerfil> listaPerfiles = new ArrayList<>();
+            ConexionSQLite cnn = new ConexionSQLite(context,Constantes.NOMBRE_BD_SQLITE,null,Constantes.VERSION_BD_SQLITE);
+            SQLiteDatabase baseDatos = cnn.getReadableDatabase();
+            String cadena = "select id_perfil,nombre,descripcion,estado from " + BaseDatos.TABLA_PERFIL + " where id_perfil = " + id;
+            Cursor fila = baseDatos.rawQuery(cadena,null);
+            while(fila.moveToNext()){
+                SegPerfil obj = new SegPerfil();
+                obj.setIdPerfil(fila.getInt(0));
+                obj.setNombre(fila.getString(1));
+                obj.setDescripcion(fila.getString(2));
+                obj.setEstado(fila.getString(3));
+                listaPerfiles.add(obj);
+                obj = null;
+            }
+            baseDatos.close();
+            return listaPerfiles;
+        }catch(Exception ex){
+            return null;
+        }
+    }
+
     public List<SegPerfil> getAllPerfilesSQLite(Context context){
         try{
             List<SegPerfil> listaPerfiles = new ArrayList<>();

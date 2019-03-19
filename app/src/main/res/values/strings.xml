@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JAAPZ Móvil</string>
+    <string name="app_name">Tomas de Lecturas</string>
     <string name="btn_login">Login</string>
     <string name="hint_password">Ingrese Contraseña</string>
     <string name="hint_usuario">Digite usuario</string>

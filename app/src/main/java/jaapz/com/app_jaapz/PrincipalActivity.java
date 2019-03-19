@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import jaapz.com.app_jaapz.pojos.SegPerfil;
+import jaapz.com.app_jaapz.pojos.SegPerfilDAO;
 import jaapz.com.app_jaapz.pojos.SegUsuario;
 import jaapz.com.app_jaapz.pojos.SegUsuarioDAO;
 import jaapz.com.app_jaapz.util.Constantes;
@@ -37,7 +39,9 @@ MapaFragment.OnFragmentInteractionListener,SyncFragment.OnFragmentInteractionLis
 CargarDatosFragment.OnFragmentInteractionListener{
 
     TextView txtNombreUsuario;
+    TextView txtPerfil;
     SegUsuarioDAO usuarioDAO = new SegUsuarioDAO();
+    SegPerfilDAO perfilDAO = new SegPerfilDAO();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,14 +50,7 @@ CargarDatosFragment.OnFragmentInteractionListener{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -66,13 +63,29 @@ CargarDatosFragment.OnFragmentInteractionListener{
         //capturar las id de los campos
         View headerView = navigationView.getHeaderView(0);
         txtNombreUsuario = (TextView) headerView.findViewById(R.id.txtNombreUsuario);
+        txtPerfil = (TextView) headerView.findViewById(R.id.txtPerfil);
         getPreference();
     }
 
     private void getPreference(){
         SharedPreferences preferences = getSharedPreferences(Constantes.ID_SHARED_PREFERENCES,MODE_PRIVATE);
         txtNombreUsuario.setText(getUsuario(preferences.getInt(Constantes.ID_SHARED_PREFERENCES_USUARIO,0)));
+        txtPerfil.setText(getPerfilUsuario(preferences.getInt(Constantes.ID_SHARED_PREFERENCES_USUARIO,0)));
         ContextGlobal.getInstance().setIdUsuarioLogeado(preferences.getInt(Constantes.ID_SHARED_PREFERENCES_USUARIO,0));
+    }
+    private String getPerfilUsuario(Integer codigo){
+        String perfil = "";
+        List<SegUsuario> usuarios = usuarioDAO.getUsuarioById(codigo,this);
+        if(usuarios.size() > 0){
+            List<SegPerfil> perfiles = perfilDAO.getAllPerfilesById(Constantes.ID_USU_LECTURA,this);
+            if(perfiles.size() > 0)
+                perfil = perfiles.get(0).getNombre();
+            else
+                perfil = "";
+        }
+        else
+            perfil = "";
+        return perfil;
     }
     private String getUsuario(Integer codigo){
         String usuario = "";
